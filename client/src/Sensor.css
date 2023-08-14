@@ -1,0 +1,66 @@
+/* Sensor item */
+.sensor {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.09) 0 3px 12px;;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    border-radius: 0.8rem;
+    padding: var(--globalGap);
+    position: relative;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.19) 0 3px 12px;
+    }
+
+    & .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    & img.status {
+        width: 16px;
+        z-index: 10;
+    }
+
+    &::before {
+        position: absolute;
+        top: var(--globalGap);
+        right: var(--globalGap);
+        content: '';
+        display: block;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        transition: box-shadow 180ms;
+    }
+
+    &.connected {
+        &::before {
+            background-color: #38ec38;
+            box-shadow: 0 2px 8px 0 #38ec38;
+        }
+    }
+
+    &.disconnected {
+
+        & p {
+            color: #d3d0e1;
+        }
+
+        &::before {
+            background-color: transparent;
+            box-shadow: 0 0 0 0 transparent;
+        }
+    }
+
+    .unit {
+        font-size: 0.8rem;
+        color: #888;
+        margin: 0;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+    }
+}

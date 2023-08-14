@@ -1,0 +1,54 @@
+:root {
+  --globalGap: .8rem;
+}
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Layout */
+.container {
+  max-width: 2400px;
+  margin: 0 auto;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 0 var(--globalGap) 0;
+  border-bottom: 1px solid #e1e1e1;
+  padding: var(--globalGap);
+  background: #fcfdff;
+}
+
+/* Title */
+h1, h2 {
+  font-size: 1.2em;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  font-size: 1rem;
+}
+
+/* Set Checkbox toggle style */
+input[type="checkbox"]#showConnectedOnly + label {
+  background: #d3d0e1;
+
+  &::before {
+    background: #f5f8ff;
+  }
+}
+input[type="checkbox"]#showConnectedOnly:checked + label {
+  background: #4bec39;
+}
+
+/* Sensors */
+.sensors-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: .8rem;
+  width: calc(100% - (var(--globalGap) * 2));
+  margin: .8rem;
+}
